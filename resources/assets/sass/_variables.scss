@@ -1,20 +1,13 @@
+$color-primary: #22a6b3;
+$color-primary-light: #7ed6df;
+$color-secondary: #f9ca24;
+$color-secondary-light: #f6e58d;
+$color-white: #fff;
+$color-black: #000;
+$color-text: #333;
+$color-grey: #555;
+$color-bg-light: #dff9fb;
 
-// Body
-$body-bg: #f8fafc;
+$font-size: 16px;
 
-// Typography
-$font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
-
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$box-shadow: 0 5px 10px $color-grey;

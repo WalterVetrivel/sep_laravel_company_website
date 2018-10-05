@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@home')->name('home');
+Route::get('/about', 'MainController@about')->name('about');
+Route::get('/portfolio', 'MainController@portfolio')->name('portfolio');
+Route::get('/blogs', 'MainController@blogs')->name('blogs');
+Route::get('/post', 'MainController@post')->name('post');
