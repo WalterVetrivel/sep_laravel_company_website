@@ -37,30 +37,52 @@
     {{-- Services Section --}}
     <section id="services" class="py-5">
         <div class="container-fluid px-5">
+            <h2 class="mb-5 text-center">Our Services</h2>
             <div class="row">
-                <div class="col-12">
-                    <h2 class="mb-5 text-center">Our Services</h2>
-                </div>
-                <div class="col-md-3 col-sm-6 service py-3">
-                    <img src="{{ URL::asset('images/service1.png') }}" alt="Service 1" class="service-image img-responsive">
-                    <h3 class="my-3">Service 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!</p>
-                </div>
-                <div class="col-md-3 col-sm-6 service py-3">
-                    <img src="{{ URL::asset('images/service2.png') }}" alt="Service 2" class="service-image img-responsive">
-                    <h3 class="my-3">Service 2</h3>
-                    <p>Lorem ipsum dolor sit amet elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima architecto placeat a dicta nesciunt fugiat laudantium!</p>
-                </div>
-                <div class="col-md-3 col-sm-6 service py-3">
-                    <img src="{{ URL::asset('images/service3.png') }}" alt="Service 3" class="service-image img-responsive">
-                    <h3 class="my-3">Service 3</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima architnesciunt fugiat laudantium!</p>
-                </div>
-                <div class="col-md-3 col-sm-6 service py-3">
-                    <img src="{{ URL::asset('images/service4.png') }}" alt="Service 4" class="service-image img-responsive">
-                    <h3 class="my-3">Service 4</h3>
-                    <p>Lorem ipsum dolor sit amet adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima architecto placeat a dicta nesciunt fugiat laudantium!</p>
-                </div>
+                @component('components.service')
+                    @slot('service_image')
+                        {{ URL::asset('images/service1.png') }}
+                    @endslot
+                    @slot('service_name')
+                        Service 1
+                    @endslot
+                    @slot('service_description')
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!
+                    @endslot
+                @endcomponent
+                @component('components.service')
+                    @slot('service_image')
+                        {{ URL::asset('images/service2.png') }}
+                    @endslot
+                    @slot('service_name')
+                        Service 2
+                    @endslot
+                    @slot('service_description')
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!
+                    @endslot
+                @endcomponent
+                @component('components.service')
+                    @slot('service_image')
+                        {{ URL::asset('images/service3.png') }}
+                    @endslot
+                    @slot('service_name')
+                        Service 3
+                    @endslot
+                    @slot('service_description')
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!
+                    @endslot
+                @endcomponent
+                @component('components.service')
+                    @slot('service_image')
+                        {{ URL::asset('images/service4.png') }}
+                    @endslot
+                    @slot('service_name')
+                        Service 4
+                    @endslot
+                    @slot('service_description')
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!
+                    @endslot
+                @endcomponent
             </div>
         </div>
     </section>
@@ -71,35 +93,41 @@
             <h2 class="text-center mb-5">Customer Reviews</h2>
             <div class="row justify-content-center">
                 <div class="col-8">
-                    <div class="row review align-items-center">
-                        <div class="col-md-2">
-                            <img src="{{ URL::asset('images/user1.png') }}" alt="User" class="img-responsive mb-3">
-                        </div>
-                        <div class="col-md-10">
-                            <h4>John Doe</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.</p>
-                        </div>
-                    </div>
+                    @component('components.review')
+                        @slot('avatar')
+                            {{ URL::asset('images/user1.png') }}
+                        @endslot
+                        @slot('customer_name')
+                            John Doe
+                        @endslot
+                        @slot('review')
+                            Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.
+                        @endslot
+                    @endcomponent
                     <hr>
-                    <div class="row review align-items-center">
-                        <div class="col-md-2">
-                            <img src="{{ URL::asset('images/user2.png') }}" alt="User" class="img-responsive mb-3">
-                        </div>
-                        <div class="col-md-10">
-                            <h4>John Doe</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.</p>
-                        </div>
-                    </div>
+                    @component('components.review')
+                        @slot('avatar')
+                            {{ URL::asset('images/user2.png') }}
+                        @endslot
+                        @slot('customer_name')
+                            John Doe
+                        @endslot
+                        @slot('review')
+                            Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.
+                        @endslot
+                    @endcomponent
                     <hr>
-                    <div class="row review align-items-center">
-                        <div class="col-md-2">
-                            <img src="{{ URL::asset('images/user3.png') }}" alt="User" class="img-responsive mb-3">
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Jane Doe</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.</p>
-                        </div>
-                    </div>
+                    @component('components.review')
+                        @slot('avatar')
+                            {{ URL::asset('images/user3.png') }}
+                        @endslot
+                        @slot('customer_name')
+                            Jane Doe
+                        @endslot
+                        @slot('review')
+                            Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.
+                        @endslot
+                    @endcomponent
                 </div>
             </div>
         </div>
@@ -110,30 +138,39 @@
         <div class="container-fluid text-center">
             <h2 class="mb-5">Our Projects</h2>
             <div class="row projects-row mb-5">
-                <div class="col-md-4 project">
-                    <img src="{{ URL::asset('images/project1.jpg') }}" alt="Project" class="img-responsive w-100 project-img">
-                    <div class="project-description">
-                        <h3>Project Title</h3>
-                        <p>Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!</p>
-                        <a href="#" class="btn btn-secondary">Learn more</a>
-                    </div>
-                </div>
-                <div class="col-md-4 project">
-                    <img src="{{ URL::asset('images/project2.jpg') }}" alt="Project" class="img-responsive w-100 project-img">
-                    <div class="project-description">
-                        <h3>Project Title</h3>
-                        <p>Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!</p>
-                        <a href="#" class="btn btn-secondary">Learn more</a>
-                    </div>
-                </div>
-                <div class="col-md-4 project">
-                    <img src="{{ URL::asset('images/project3.jpg') }}" alt="Project" class="img-responsive w-100 project-img">
-                    <div class="project-description">
-                        <h3>Project Title</h3>
-                        <p>Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!</p>
-                        <a href="#" class="btn btn-secondary">Learn more</a>
-                    </div>
-                </div>
+                @component('components.project')
+                    @slot('project_image')
+                        {{ URL::asset('images/project1.jpg') }}
+                    @endslot
+                    @slot('project_title')
+                        Project Title
+                    @endslot
+                    @slot('project_description')
+                        Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!
+                    @endslot
+                @endcomponent
+                @component('components.project')
+                    @slot('project_image')
+                        {{ URL::asset('images/project2.jpg') }}
+                    @endslot
+                    @slot('project_title')
+                        Project Title
+                    @endslot
+                    @slot('project_description')
+                        Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!
+                    @endslot
+                @endcomponent
+                @component('components.project')
+                    @slot('project_image')
+                        {{ URL::asset('images/project3.jpg') }}
+                    @endslot
+                    @slot('project_title')
+                        Project Title
+                    @endslot
+                    @slot('project_description')
+                        Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!
+                    @endslot
+                @endcomponent
             </div>
             <a href="#" class="btn btn-primary btn-lg">View Portfolio</a>
         </div>
