@@ -1,9 +1,8 @@
 .navbar {
-    padding: 0;
+    padding: 8px;
     z-index: 9999;
     background-color: $color-white;
     &-brand {
-        padding: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
