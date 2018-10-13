@@ -10,6 +10,7 @@
     flex-direction: column;
     text-align: center;
     color: $color-white;
+
     .main-container {
         flex: 1;
         display: flex;
@@ -17,6 +18,7 @@
         justify-content: center;
         flex-direction: column;
     }
+
     .contact-container {
         background-color: rgba($color-secondary, .95);
         width: 100%;
@@ -24,6 +26,7 @@
         color: $color-white;
         justify-self: flex-end;
     }
+
     .contact-box {
         display: flex;
         flex-direction: column;
@@ -31,11 +34,13 @@
         justify-content: center;
         padding: 16px;
         transition: all .3s;
+
         * {
             padding: 0;
             margin: 0;
         }
     }
+
     .contact-box:hover {
         background-color: $color-primary;
     }
@@ -45,10 +50,12 @@
     .service {
         text-align: center;
         transition: all .3s ease-in-out;
+
         &:hover {
             box-shadow: $box-shadow;
             border-radius: 3px;
         }
+
         &-image {
             width: 50%;
         }
@@ -60,11 +67,14 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     .review {
         font-style: italic;
+
         img {
             width: 100%;
         }
+
         h4 {
             color: $color-secondary;
         }
@@ -73,41 +83,4 @@
 
 #projects {
     background-color: $color-grey-light;
-    .projects-row {
-        .project {
-            position: relative;
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
-            z-index: 999;
-            &-description {
-                position: absolute;
-                top: 0;
-                left: 0;
-                padding: 16px;
-                text-align: center;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                color: $color-white;
-                opacity: 0;
-                transform: translateY(100%);
-            }
-            *:not(.btn) {
-                transition: all .4s;
-            }
-            &:hover {
-                .project-description {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-                .project-img {
-                    filter: brightness(.45) blur(2px);
-                    transform: scale(1.05);
-                }
-            }
-        }
-    }
 }

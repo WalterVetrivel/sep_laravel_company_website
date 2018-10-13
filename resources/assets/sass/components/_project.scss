@@ -1,0 +1,44 @@
+.project {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    z-index: 999;
+
+    a {
+        color: inherit;
+    }
+
+    &-description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 16px;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $color-white;
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    *:not(.btn) {
+        transition: all .4s;
+    }
+
+    &:hover {
+        cursor: pointer;
+        .project-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-img {
+            filter: brightness(.45) blur(2px);
+            transform: scale(1.05);
+        }
+    }
+}

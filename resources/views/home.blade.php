@@ -6,8 +6,8 @@
             <h1 class="mb-3">Company Name</h1>
             <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic soluta excepturi iure reiciendis voluptas repellendus illum veniam blanditiis delectus! Blanditiis at nisi optio sapiente, nam doloremque repudiandae voluptatibus consequuntur aliquam!</p>
             <div class="button-container d-flex flex-wrap">
-                <a href="#" class="btn btn-primary btn-lg mr-2">Learn more</a>
-                <a href="#" class="btn btn-secondary btn-lg">Our Portfolio</a>
+                <a href="{{ route('about') }}" class="btn btn-primary btn-lg mr-2">Learn more</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-secondary btn-lg">Our Portfolio</a>
             </div>
         </div>
         <div class="container-fluid contact-container">
@@ -39,50 +39,19 @@
         <div class="container-fluid px-5">
             <h2 class="mb-5 text-center">Our Services</h2>
             <div class="row">
-                @component('components.service')
-                    @slot('service_image')
-                        {{ URL::asset('images/service1.png') }}
-                    @endslot
-                    @slot('service_name')
-                        Service 1
-                    @endslot
-                    @slot('service_description')
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!
-                    @endslot
-                @endcomponent
-                @component('components.service')
-                    @slot('service_image')
-                        {{ URL::asset('images/service2.png') }}
-                    @endslot
-                    @slot('service_name')
-                        Service 2
-                    @endslot
-                    @slot('service_description')
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!
-                    @endslot
-                @endcomponent
-                @component('components.service')
-                    @slot('service_image')
-                        {{ URL::asset('images/service3.png') }}
-                    @endslot
-                    @slot('service_name')
-                        Service 3
-                    @endslot
-                    @slot('service_description')
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!
-                    @endslot
-                @endcomponent
-                @component('components.service')
-                    @slot('service_image')
-                        {{ URL::asset('images/service4.png') }}
-                    @endslot
-                    @slot('service_name')
-                        Service 4
-                    @endslot
-                    @slot('service_description')
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat eaque, vel in ipsa cum quam quae minima archnesciunt fugiat laudantium!
-                    @endslot
-                @endcomponent
+                @foreach($services as $index => $service)
+                    @component('components.service')
+                        @slot('service_image')
+                            {{ URL::asset('images/service'. ($index + 1)  .'.png') }}
+                        @endslot
+                        @slot('service_name')
+                            {{ $service->service_name }}
+                        @endslot
+                        @slot('service_description')
+                            {{ $service->service_description }}
+                        @endslot
+                    @endcomponent
+                @endforeach
             </div>
         </div>
     </section>
@@ -93,41 +62,22 @@
             <h2 class="text-center mb-5">Customer Reviews</h2>
             <div class="row justify-content-center">
                 <div class="col-8">
-                    @component('components.review')
-                        @slot('avatar')
-                            {{ URL::asset('images/user1.png') }}
-                        @endslot
-                        @slot('customer_name')
-                            John Doe
-                        @endslot
-                        @slot('review')
-                            Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.
-                        @endslot
-                    @endcomponent
-                    <hr>
-                    @component('components.review')
-                        @slot('avatar')
-                            {{ URL::asset('images/user2.png') }}
-                        @endslot
-                        @slot('customer_name')
-                            John Doe
-                        @endslot
-                        @slot('review')
-                            Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.
-                        @endslot
-                    @endcomponent
-                    <hr>
-                    @component('components.review')
-                        @slot('avatar')
-                            {{ URL::asset('images/user3.png') }}
-                        @endslot
-                        @slot('customer_name')
-                            Jane Doe
-                        @endslot
-                        @slot('review')
-                            Lorem ipsum dolor sit amet consectetur elit. Rerum tempora voluptatibus, totam accusantium vel eveniet ut, dicta corporis consequuntur fugiat quae necessitatibus quas veritatis.
-                        @endslot
-                    @endcomponent
+                    @foreach($reviews as $index => $review)
+                        @component('components.review')
+                            @slot('avatar')
+                                {{ URL::asset('images/user'. ($index + 1) .'.png') }}
+                            @endslot
+                            @slot('customer_name')
+                                {{ $review->customer_name }}
+                            @endslot
+                            @slot('review')
+                                {{ $review->review }}
+                            @endslot
+                        @endcomponent
+                        @if($index < 2)
+                        <hr>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -138,41 +88,24 @@
         <div class="container-fluid text-center">
             <h2 class="mb-5">Our Projects</h2>
             <div class="row projects-row mb-5">
-                @component('components.project')
-                    @slot('project_image')
-                        {{ URL::asset('images/project1.jpg') }}
-                    @endslot
-                    @slot('project_title')
-                        Project Title
-                    @endslot
-                    @slot('project_description')
-                        Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!
-                    @endslot
-                @endcomponent
-                @component('components.project')
-                    @slot('project_image')
-                        {{ URL::asset('images/project2.jpg') }}
-                    @endslot
-                    @slot('project_title')
-                        Project Title
-                    @endslot
-                    @slot('project_description')
-                        Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!
-                    @endslot
-                @endcomponent
-                @component('components.project')
-                    @slot('project_image')
-                        {{ URL::asset('images/project3.jpg') }}
-                    @endslot
-                    @slot('project_title')
-                        Project Title
-                    @endslot
-                    @slot('project_description')
-                        Lorem ipsum dolor sit amet adipisicing elit. Molestias eos aperiam! Ut assumenda rerum atque iste ex consequatur facere fuga!
-                    @endslot
-                @endcomponent
+                @foreach($projects as $index => $project)
+                    @component('components.project')
+                        @slot('project_image')
+                            {{ URL::asset('images/project'. ($index + 1) .'.jpg') }}
+                        @endslot
+                        @slot('project_title')
+                            {{ $project->project_title }}
+                        @endslot
+                        @slot('project_description')
+                            {{ $project->project_description }}
+                        @endslot
+                        @slot('project_id')
+                            project{{ $index }}
+                        @endslot
+                    @endcomponent
+                @endforeach
             </div>
-            <a href="#" class="btn btn-primary btn-lg">View Portfolio</a>
+            <a href="{{ route('portfolio') }}" class="btn btn-primary btn-lg">View Portfolio</a>
         </div>
     </section>
     {{-- End Projects --}}

@@ -60,8 +60,9 @@ a:hover {
 
 .navbar {
   padding: 8px;
-  z-index: 9999;
   background-color: #fff;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .navbar-brand {
@@ -86,7 +87,7 @@ a:hover {
   color: #7ed6df !important;
 }
 
-.navbar .nav-link.active {
+.navbar .nav-item.active .nav-link {
   color: #22a6b3 !important;
 }
 
@@ -101,6 +102,66 @@ footer .fa {
 
 footer h4 {
   color: #f9ca24;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  z-index: 999;
+}
+
+.project a {
+  color: inherit;
+}
+
+.project-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px;
+  text-align: center;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.project *:not(.btn) {
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.project:hover {
+  cursor: pointer;
+}
+
+.project:hover .project-description {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.project:hover .project-img {
+  -webkit-filter: brightness(0.45) blur(2px);
+          filter: brightness(0.45) blur(2px);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #landing {
@@ -222,55 +283,23 @@ footer h4 {
   background-color: #f7f7f7;
 }
 
-#projects .projects-row .project {
-  position: relative;
-  overflow: hidden;
+h2 {
+  color: #22a6b3;
+  text-align: center;
+}
+
+.about-description {
+  text-align: justify;
+}
+
+.about-img {
   padding: 0;
   margin: 0;
-  z-index: 999;
+  height: 280px;
+  overflow: hidden;
 }
 
-#projects .projects-row .project-description {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 16px;
-  text-align: center;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #fff;
-  opacity: 0;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-}
-
-#projects .projects-row .project *:not(.btn) {
-  -webkit-transition: all .4s;
-  transition: all .4s;
-}
-
-#projects .projects-row .project:hover .project-description {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-#projects .projects-row .project:hover .project-img {
-  -webkit-filter: brightness(0.45) blur(2px);
-          filter: brightness(0.45) blur(2px);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+#team {
+  background-color: #f7f7f7;
 }
 

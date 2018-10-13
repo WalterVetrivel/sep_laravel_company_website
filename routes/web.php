@@ -14,5 +14,5 @@
 Route::get('/', 'MainController@home')->name('home');
 Route::get('/about', 'MainController@about')->name('about');
 Route::get('/portfolio', 'MainController@portfolio')->name('portfolio');
-Route::get('/blogs', 'MainController@blogs')->name('blogs');
+Route::get('/blogs', 'MainController@blog')->name('blog');
 Route::get('/post', 'MainController@post')->name('post');

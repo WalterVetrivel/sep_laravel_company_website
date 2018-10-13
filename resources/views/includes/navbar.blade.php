@@ -8,10 +8,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navLinks">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                <li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item {{ Request::is('about') ? 'active' : '' }}"><a href="{{ route('about') }}" class="nav-link">About</a></li>
+                <li class="nav-item {{ Request::is('portfolio') ? 'active' : '' }}"><a href="{{ route('portfolio') }}" class="nav-link">Portfolio</a></li>
+                <li class="nav-item {{ Request::is('blog') ? 'active' : '' }}"><a href="{{ route('blog') }}" class="nav-link">Blog</a></li>
             </ul>
         </div>
     </div>

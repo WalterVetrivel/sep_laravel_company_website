@@ -1,0 +1,19 @@
+h2 {
+    color: $color-primary;
+    text-align: center;
+}
+
+.about-description {
+    text-align: justify;
+}
+
+.about-img {
+    padding: 0;
+    margin: 0;
+    height: 280px;
+    overflow: hidden;
+}
+
+#team {
+    background-color: $color-grey-light;
+}

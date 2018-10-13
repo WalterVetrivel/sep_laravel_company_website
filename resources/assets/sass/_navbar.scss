@@ -1,7 +1,8 @@
 .navbar {
     padding: 8px;
-    z-index: 9999;
+    // z-index: 9999;
     background-color: $color-white;
+    transition: all .3s;
     &-brand {
         display: flex;
         align-items: center;
@@ -15,7 +16,7 @@
     .nav-link:hover {
         color: $color-primary-light !important;
     }
-    .nav-link.active {
+    .nav-item.active .nav-link {
         color: $color-primary !important;
     }
 }

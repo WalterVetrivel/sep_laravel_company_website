@@ -3,22 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Project;
+use App\Service;
+use App\Review;
+use App\TeamMember;
 
 class MainController extends Controller
 {
     public function home() {
-        return view('home');
+        $services = Service::limit(4)->get();
+        $projects = Project::limit(3)->get();
+        $reviews = Review::limit(3)->get();
+        return view('home', compact('services', 'projects', 'reviews'));
     }
 
     public function about() {
-        return view('about');
+        $team_members = TeamMember::limit(3)->get();
+        return view('about', compact('team_members'));
     }
 
     public function portfolio() {
-        return view('portfolio');
+        $projects = Project::all();
+        return view('portfolio', compact('projects'));
     }
 
-    public function blogs() {
+    public function blog() {
         return view('blogs');
     }
 
