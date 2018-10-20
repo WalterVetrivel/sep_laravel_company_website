@@ -3,36 +3,36 @@
     {{-- Landing Section --}}
     <section id="landing">
         <div class="container main-container py-5">
-            <h1 class="mb-3">Company Name</h1>
-            <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic soluta excepturi iure reiciendis voluptas repellendus illum veniam blanditiis delectus! Blanditiis at nisi optio sapiente, nam doloremque repudiandae voluptatibus consequuntur aliquam!</p>
+            <h1 class="mb-3">{{ $company[0]->company_name }}</h1>
+            <p class="mb-3">{{ \Illuminate\Support\Str::words($company[0]->company_description, 25) }}</p>
             <div class="button-container d-flex flex-wrap">
                 <a href="{{ route('about') }}" class="btn btn-primary btn-lg mr-2">Learn more</a>
                 <a href="{{ route('portfolio') }}" class="btn btn-secondary btn-lg">Our Portfolio</a>
             </div>
         </div>
-        <div class="container-fluid contact-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 contact-box">
-                        <i class="fa fa-phone fa-3x"></i>
-                        <p>+0 000 0000</p>
-                    </div>
-                    <div class="col-md-3 contact-box">
-                        <i class="fa fa-envelope fa-3x"></i>
-                        <p>contact@company.com</p>
-                    </div>
-                    <div class="col-md-3 contact-box">
-                        <i class="fa fa-facebook fa-3x"></i>
-                        <p>facebook.com/company</p>
-                    </div>
-                    <div class="col-md-3 contact-box">
-                        <i class="fa fa-twitter fa-3x"></i>
-                        <p>twitter.com/company</p>
-                    </div>
+    </section>
+    <div class="container-fluid contact-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 contact-box">
+                    <i class="fa fa-phone fa-3x"></i>
+                    <p>{{ $company[0]->phone_number }}</p>
+                </div>
+                <div class="col-md-3 contact-box">
+                    <i class="fa fa-envelope fa-3x"></i>
+                    <p>{{ $company[0]->email }}</p>
+                </div>
+                <div class="col-md-3 contact-box">
+                    <i class="fa fa-facebook fa-3x"></i>
+                    <p>{{ $company[0]->facebook }}</p>
+                </div>
+                <div class="col-md-3 contact-box">
+                    <i class="fa fa-twitter fa-3x"></i>
+                    <p>{{ $company[0]->twitter }}</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     {{-- End Landing --}}
     {{-- Services Section --}}
     <section id="services" class="py-5">

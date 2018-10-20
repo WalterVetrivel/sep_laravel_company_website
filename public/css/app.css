@@ -123,6 +123,7 @@ footer h4 {
   padding: 16px;
   text-align: center;
   height: 100%;
+  width: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,7 +166,7 @@ footer h4 {
 }
 
 #landing {
-  min-height: 87vh;
+  min-height: 72vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 166, 179, 0.75)), to(rgba(34, 166, 179, 0.75))), url(/images/landing.jpg?82df77a89e0de60eb4beead09cc4d933);
   background: linear-gradient(rgba(34, 166, 179, 0.75), rgba(34, 166, 179, 0.75)), url(/images/landing.jpg?82df77a89e0de60eb4beead09cc4d933);
   background-attachment: fixed;
@@ -207,7 +208,7 @@ footer h4 {
           flex-direction: column;
 }
 
-#landing .contact-container {
+.contact-container {
   background-color: rgba(249, 202, 36, 0.95);
   width: 100%;
   text-align: center;
@@ -215,7 +216,7 @@ footer h4 {
   justify-self: flex-end;
 }
 
-#landing .contact-box {
+.contact-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,12 +235,12 @@ footer h4 {
   transition: all .3s;
 }
 
-#landing .contact-box * {
+.contact-box * {
   padding: 0;
   margin: 0;
 }
 
-#landing .contact-box:hover {
+.contact-box:hover {
   background-color: #22a6b3;
 }
 
@@ -301,5 +302,9 @@ h2 {
 
 #team {
   background-color: #f7f7f7;
+}
+
+#blog-post img {
+  width: 100%;
 }
 

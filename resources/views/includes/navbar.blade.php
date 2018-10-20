@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-navbar" id="navbar">
     <div class="container">
-        <a href="#" class="navbar-brand">
+        <a href="{{ route('home') }}" class="navbar-brand">
             <i class="fa fa-3x fa-globe mr-2"></i>Company
         </a>
         <button class="navbar-toggler" type="button" role="button" data-toggle="collapse" data-target="#navLinks">
